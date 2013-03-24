@@ -1,13 +1,19 @@
 package logic;
 
+import gui.Chooser;
+
+/**
+ * This is the entry point of whole application.
+ * 
+ * @author MichalBoron
+ *
+ */
 public class EntryPoint {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
 
-		System.out.println("asdfasf");
+		Player player = new Player();
+		Chooser chooser = new Chooser();
 	}
 
 }
