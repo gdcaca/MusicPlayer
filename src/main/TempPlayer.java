@@ -11,7 +11,8 @@ import javax.sound.sampled.DataLine;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 
-import logic.Track;
+import fileLoading.Track;
+
 
 /**
  * This class exists only for testing purposes. It will be deleted later on.

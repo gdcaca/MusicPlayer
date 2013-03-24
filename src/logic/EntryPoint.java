@@ -1,5 +1,7 @@
 package logic;
 
+import fileLoading.Track;
+import fileLoading.TrackBuilder;
 import gui.Chooser;
 
 /**
@@ -14,6 +16,10 @@ public class EntryPoint {
 
 		Player player = new Player();
 		Chooser chooser = new Chooser();
+		
+		TrackBuilder trackBuilder = new TrackBuilder();
+		Track currentTrack = trackBuilder.getWavTrack("applause.wav");
+		currentTrack.playTrack();
 	}
 
 }
