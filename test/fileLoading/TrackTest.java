@@ -15,7 +15,7 @@ public class TrackTest {
 	}
 	
 	@Test
-	public void trackPos() {
+	public void trackPosPause() {
 		Track track = trackBuilder.getWavTrack("applause.wav");
 		assertEquals(0, track.getCurrentPosition(), 0.1);
 		
@@ -29,9 +29,32 @@ public class TrackTest {
 		
 		track.pauseTrack();
 		assertEquals(1, track.getCurrentPosition(), 0.3);
+	}
+	
+	@Test
+	public void trackPosStop() {
+		Track track = trackBuilder.getWavTrack("applause.wav");
+		assertEquals(0, track.getCurrentPosition(), 0.1);
+		
+		track.playTrack();
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		assertEquals(1, track.getCurrentPosition(), 0.3);
 		
 		track.stopTrack();
 		assertEquals(0, track.getCurrentPosition(), 0.3);
 	}
 
+	@Test 
+	public void trackSetPos() {
+		Track track = trackBuilder.getWavTrack("applause.wav");
+		assertEquals(0, track.getCurrentPosition(), 0.1);
+		
+		track.setPosition(3);
+		
+		assertEquals(3, track.getCurrentPosition(), 0.1);
+	}
 }
